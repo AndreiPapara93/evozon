@@ -13,6 +13,7 @@
 		<springVersion>5.2.2.RELEASE</springVersion>
 		<hibernateVersion>5.4.10.Final</hibernateVersion>
 		<mySqlConnectorVersion>5.1.47</mySqlConnectorVersion>
+		<hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
 		<jstlVersion>1.2</jstlVersion>
 	</properties>
 
@@ -38,12 +39,18 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springVersion}</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernateVersion}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->

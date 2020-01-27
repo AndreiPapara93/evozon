@@ -71,4 +71,13 @@
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
 
+
+	<beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>classpath:validation</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
 </beans:beans>

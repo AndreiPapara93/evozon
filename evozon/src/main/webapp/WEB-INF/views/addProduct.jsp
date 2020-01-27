@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <!doctype html>
@@ -47,18 +48,26 @@
 
 											<hr>
 											<form:form method="POST" action="/EvozonTest/addProduct"
-												modelAttribute="product">
-												<div class="form-group row align-items-center">
-													<form:label class="col-3" path="name">Name</form:label>
-													<form:input class="form-control col" type="text"
-														placeholder="Enter product name" path="name" />
-												</div>
-												<div class="form-group row align-items-center">
-													<form:label class="col-3" path="code">Code</form:label>
-													<form:input class="form-control col" type="text"
-														placeholder="Enter product code" path="code" />
-												</div>
-												<div class="form-group row align-items-center">
+												modelAttribute="productDTO">
+												<spring:bind path="name">
+													<div
+														class="form-group row align-items-center ${status.error ? 'has-error' : ''}">
+														<form:label class="col-3" path="name">Name</form:label>
+														<form:input class="form-control col" type="text"
+															placeholder="Enter product name" path="name" />
+														<form:errors path="name"></form:errors>
+													</div>
+												</spring:bind>
+												<spring:bind path="code">
+													<div
+														class="form-group row align-items-center ${status.error ? 'has-error' : ''}">
+														<form:label class="col-3" path="code">Code</form:label>
+														<form:input class="form-control col" type="text"
+															placeholder="Enter product code" path="code" />
+														<form:errors path="code"></form:errors>
+													</div>
+												</spring:bind>
+												<div class="form-group row align-items-center ">
 													<form:label class="col-3" path="category">Category</form:label>
 													<form:select class="form-control col" path="category">
 														<c:forEach items="${categories}" var="category">

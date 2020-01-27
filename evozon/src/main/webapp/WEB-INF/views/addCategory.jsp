@@ -1,6 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!doctype html>
 <html lang="en">
@@ -48,11 +49,15 @@
 											<hr>
 											<form:form method="POST" action="/EvozonTest/addCategory"
 												modelAttribute="category">
-												<div class="form-group row align-items-center">
-													<form:label class="col-3" path="name">Name</form:label>
-													<form:input class="form-control col" type="text"
-														placeholder="Enter category name" path="name" />
-												</div>
+												<spring:bind path="name">
+													<div
+														class="form-group row align-items-center ${status.error ? 'has-error' : ''}">
+														<form:label class="col-3" path="name">Name</form:label>
+														<form:input class="form-control col" type="text"
+															placeholder="Enter category name" path="name" />
+														<form:errors path="name"></form:errors>
+													</div>
+												</spring:bind>
 												<div class="form-group row align-items-center">
 													<input class="btn btn-lg btn-block btn-primary"
 														role="button" type="submit" value="Create category" />
