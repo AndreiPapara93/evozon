@@ -1,7 +1,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!doctype html>
 <html lang="en">
@@ -75,10 +76,22 @@
 														</c:forEach>
 													</form:select>
 												</div>
-												<div class="form-group row align-items-center">
-													<input class="btn btn-lg btn-block btn-primary"
-														role="button" type="submit" value="Create product" />
-												</div>
+												<c:choose>
+													<c:when test="${fn:length(categories) gt 0}">
+														<div class="form-group row align-items-center">
+															<input class="btn btn-lg btn-block btn-primary"
+																role="button" type="submit" value="Create product" />
+														</div>
+													</c:when>
+													<c:otherwise>
+														<p>You need to add a category first</p>
+														<div class="form-group row align-items-center">
+															<input class="btn btn-lg btn-block btn-primary"
+																role="button" type="submit" value="Create product"
+																disabled />
+														</div>
+													</c:otherwise>
+												</c:choose>
 											</form:form>
 										</div>
 									</div>
