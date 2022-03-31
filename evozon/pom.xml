@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<springVersion>5.2.2.RELEASE</springVersion>
+		<springVersion>5.3.18</springVersion>
 		<hibernateVersion>5.4.10.Final</hibernateVersion>
 		<mySqlConnectorVersion>5.1.47</mySqlConnectorVersion>
 		<hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
