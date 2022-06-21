@@ -12,7 +12,7 @@
 	<properties>
 		<springVersion>5.2.2.RELEASE</springVersion>
 		<hibernateVersion>5.4.10.Final</hibernateVersion>
-		<mySqlConnectorVersion>5.1.47</mySqlConnectorVersion>
+		<mySqlConnectorVersion>8.0.28</mySqlConnectorVersion>
 		<hibernate-validator.version>5.2.1.Final</hibernate-validator.version>
 		<jstlVersion>1.2</jstlVersion>
 	</properties>
